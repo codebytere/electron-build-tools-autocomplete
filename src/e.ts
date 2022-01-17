@@ -1,3 +1,5 @@
+import { deserialize } from "v8";
+
 const completionSpec: Fig.Spec = {
   name: "e",
   description: "Electron build tool",
@@ -219,6 +221,19 @@ const completionSpec: Fig.Spec = {
   }, {
     name: "update-goma",
     description: "Ensure a fresh copy of Goma is installed"
+  }, {
+    name: "sanitize-config",
+    description: "Update and overwrite an existing config to conform to latest build-tools updates",
+    args: [{
+      name: "name",
+      description: "The configuration name"
+    }]
+  }, {
+    name: "npm",
+    description: "Run a command that eventually spawns the electron NPM package but override the Electron binary that is used to be your local from-source electron"
+  }, {
+    name: ["depot-tools", "d"],
+    description: "Run a command from the depot-tools directory with the correct configuration"
   }],
 };
 
