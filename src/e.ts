@@ -1,5 +1,3 @@
-import { deserialize } from "v8";
-
 const completionSpec: Fig.Spec = {
   name: "e",
   description: "Electron build tool",
