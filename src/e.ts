@@ -1,3 +1,5 @@
+import { deserialize } from "v8";
+
 const completionSpec: Fig.Spec = {
   name: "e",
   description: "Electron build tool",
@@ -172,6 +174,26 @@ const completionSpec: Fig.Spec = {
         }]
       }
     ]
+  }, {
+    name: "patches",
+    description: "Refresh the patches in $root/src/electron/patches/$basename",
+    args: [{
+      name: "target",
+      description: "The patch directory target - either 'all' or a directory listed in e show --list-targets",
+    }]
+  }, {
+    name: "open",
+    description: "Open a GitHub URL for the given commit hash / pull # / issue #",
+    args: [{
+      name: "sha1", 
+      description: "A git commit sha"
+    }, {
+      name: "issue_number",
+      description: "A GitHub issue number - e.g. 12345"
+    }, {
+      name: "pr_number",
+      description: "A GitHub PR number - e.g. 12345"
+    }]
   }],
 };
 
