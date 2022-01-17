@@ -147,6 +147,31 @@ const completionSpec: Fig.Spec = {
         suggestions: ["main", "remote", "native"]
       }]
     }]
+  }, {
+    name: "pr",
+    description: "Open a GitHub URL where you can PR your changes",
+    options: [
+      {
+        name: ["--source", "-s"],
+        description: "Where the changes are coming from",
+        args: [{
+          name: "source_branch"
+        }]
+      }, {
+        name: ["--target", "-t"],
+        description: "Where the changes are going to",
+        args: [{
+          name: "target_branch"
+        }]
+      }, {
+        name: ["--backport", "-b"],
+        description: "Pull request being backported",
+        args: [{
+          name: "pull_request",
+          description: "The pull request number - e.g. 12345"
+        }]
+      }
+    ]
   }],
 };
 
