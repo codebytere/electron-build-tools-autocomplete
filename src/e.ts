@@ -1,5 +1,3 @@
-import { deserialize } from "v8";
-
 const completionSpec: Fig.Spec = {
   name: "e",
   description: "Electron build tool",
@@ -194,6 +192,33 @@ const completionSpec: Fig.Spec = {
       name: "pr_number",
       description: "A GitHub PR number - e.g. 12345"
     }]
+  }, {
+    name: "load-xcode",
+    description: "Loads required versions of Xcode and the macOS SDK and symlinks them"
+  }, {
+    name: ["auto-update", "check-for-updates"],
+    description: "Check for build-tools updates or enable/disable automatic updates"
+  }, {
+    name: ["cherry-pick", "auto-cherry-pick"],
+    description: "Opens a PR to electron/electron that backport the given CL into our patches folder",
+    args: [{
+      name: "patch_url",
+      description: "The url for the patch to apply",
+    }, {
+      name: "target_branch",
+      description: "The branch to apply the patch to",
+    }, {
+      name: "additional_branches",
+      description: "Additional branches to apply the patch to in comma-separated format",
+      isOptional: true
+    }],
+    options: [{
+      name: "--security",
+      description: "Whether this backport is for security reasons"
+    }]
+  }, {
+    name: "update-goma",
+    description: "Ensure a fresh copy of Goma is installed"
   }],
 };
 
