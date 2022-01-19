@@ -4,6 +4,7 @@ const completionSpec: Fig.Spec = {
   subcommands: [
     {
       name: ["init", "new"],
+      icon: "🌱",
       description: "Create a new build configuration",
       args: {
         name: "name",
@@ -126,6 +127,8 @@ const completionSpec: Fig.Spec = {
     },
     {
       name: ["start", "run"],
+      icon:
+        "https://emoji.slack-edge.com/T394SAQKC/beepbeep/58d521f29571f761.png",
       description: "Run the Electron executable",
       args: {
         name: "/path/to/app",
@@ -134,6 +137,8 @@ const completionSpec: Fig.Spec = {
     },
     {
       name: "node",
+      icon:
+        "https://emoji.slack-edge.com/T394SAQKC/nodejs/0bf6569ea5cb2a97.png",
       description: "Run the Electron build as if it were a Node.js executable",
       args: {
         name: "/path/to/app",
@@ -142,6 +147,7 @@ const completionSpec: Fig.Spec = {
     },
     {
       name: "debug",
+      icon: "🪲",
       description: "Run the Electron build with a debugger (gdb or lldb)",
     },
     {
@@ -154,6 +160,7 @@ const completionSpec: Fig.Spec = {
     },
     {
       name: ["remove", "rm"],
+      icon: "❌",
       description: "Remove build config <name> from list",
       args: {
         name: "name",
@@ -162,6 +169,7 @@ const completionSpec: Fig.Spec = {
     },
     {
       name: "show",
+      icon: "👉",
       description: "Show info about the current build config",
       subcommands: [
         {
@@ -202,6 +210,7 @@ const completionSpec: Fig.Spec = {
         },
         {
           name: "root",
+          icon: "🌳",
           description:
             "Show path of the top directory - home of the .gclient file",
         },
@@ -216,6 +225,7 @@ const completionSpec: Fig.Spec = {
         },
         {
           name: "out",
+          icon: "fig://icon?type=folder",
           description: 'Show outdir name, e.g. "Testing"',
           options: [
             {
@@ -226,24 +236,33 @@ const completionSpec: Fig.Spec = {
         },
         {
           name: "stats",
+          icon: "📈",
           description: "Show build statistics",
         },
         {
           name: "goma",
+          icon:
+            "https://emoji.slack-edge.com/T394SAQKC/goma/d6b38c8b2035f496.png",
           description: "Watch Goma at work at http://localhost:8088",
         },
         {
           name: "gomadir",
+          icon:
+            "https://emoji.slack-edge.com/T394SAQKC/goma/d6b38c8b2035f496.png",
           description: "Show path of the goma directory",
         },
         {
           name: "gomagn",
+          icon:
+            "https://emoji.slack-edge.com/T394SAQKC/goma/d6b38c8b2035f496.png",
           description: "Show path of the goma.gn file",
         },
       ],
     },
     {
       name: "test",
+      icon:
+        "https://emoji.slack-edge.com/T394SAQKC/approve/73cc89adc7ccd40a.png",
       description: "Run Electron's spec runner",
       options: [
         {
@@ -267,6 +286,7 @@ const completionSpec: Fig.Spec = {
     },
     {
       name: "pr",
+      icon: "fig://icon?type=github",
       description: "Open a GitHub URL where you can PR your changes",
       options: [
         {
@@ -295,6 +315,8 @@ const completionSpec: Fig.Spec = {
     },
     {
       name: "patches",
+      icon:
+        "https://emoji.slack-edge.com/T394SAQKC/unsafe/2bc613b4bba4aa2e.png",
       description:
         "Refresh the patches in $root/src/electron/patches/$basename",
       args: {
@@ -305,6 +327,7 @@ const completionSpec: Fig.Spec = {
     },
     {
       name: "open",
+      icon: "fig://icon?type=github",
       description:
         "Open a GitHub URL for the given commit hash / pull # / issue #",
       args: [
@@ -324,6 +347,7 @@ const completionSpec: Fig.Spec = {
     },
     {
       name: "load-xcode",
+      icon: "https://emoji.slack-edge.com/T394SAQKC/mac/bc7f8752baacb219.png",
       description:
         "Loads required versions of Xcode and the macOS SDK and symlinks them",
     },
@@ -361,6 +385,7 @@ const completionSpec: Fig.Spec = {
     },
     {
       name: "update-goma",
+      icon: "https://emoji.slack-edge.com/T394SAQKC/goma/d6b38c8b2035f496.png",
       description: "Ensure a fresh copy of Goma is installed",
     },
     {
@@ -374,11 +399,13 @@ const completionSpec: Fig.Spec = {
     },
     {
       name: "npm",
+      icon: "fig://icon?type=npm",
       description:
         "Run a command that eventually spawns the electron NPM package but override the Electron binary that is used to be your local from-source electron",
     },
     {
       name: ["depot-tools", "d"],
+      icon: "🧰",
       description:
         "Run a command from the depot-tools directory with the correct configuration",
     },
