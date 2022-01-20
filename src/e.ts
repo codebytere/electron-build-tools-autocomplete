@@ -1,3 +1,14 @@
+const buildTargets = [
+  'breakpad',
+  'chromedriver',
+  'electron',
+  'chromium',
+  'electron:dist',
+  'mksnapshot',
+  'node:headers',
+  'default'
+]
+
 const completionSpec: Fig.Spec = {
   name: "e",
   description: "Electron build tool",
@@ -96,6 +107,7 @@ const completionSpec: Fig.Spec = {
           name: "target",
           description: "The ninja build target",
           isOptional: true,
+          suggestions: buildTargets
         },
         {
           name: "ninjaArguments",
@@ -117,6 +129,8 @@ const completionSpec: Fig.Spec = {
           description: "Forces a specific ninja target",
           args: {
             name: "target",
+            description: "The ninja build target",
+            suggestions: buildTargets
           },
         },
         {
@@ -268,13 +282,17 @@ const completionSpec: Fig.Spec = {
         {
           name: "--node",
           description: "Run node spec runner",
+          exclusiveOn: ["--nan", "--runners"],
         },
         {
           name: "--nan",
           description: "Run nan spec runner",
+          exclusiveOn: ["--node", "--runners"],
         },
         {
           name: "--runners",
+          description: "Run test suite for a subset of Electron processes",
+          exclusiveOn: ["--node", "--nan"],
           requiresEquals: true,
           args: {
             name: "runner",
