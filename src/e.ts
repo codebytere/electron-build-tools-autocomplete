@@ -111,6 +111,18 @@ const completionSpec: Fig.Spec = {
       ],
     },
     {
+      name: "ci",
+      description: "Show information about CI jobs",
+      icon: "⭕",
+      args: [
+        {
+          name: "status",
+          description: "Show the most recent CI job status for the current checkout",
+          isOptional: false,
+        },
+      ],
+    },
+    {
       name: ["build", "make"],
       description: "Build Electron and other things",
       icon: "🛠️",
