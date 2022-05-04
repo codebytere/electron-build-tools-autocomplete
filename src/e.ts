@@ -99,6 +99,18 @@ const completionSpec: Fig.Spec = {
       ],
     },
     {
+      name: "backport",
+      description: "Assist with manual backport processes",
+      icon: "🎯",
+      args: [
+        {
+          name: "pr",
+          description: "The PR number to backport",
+          isOptional: false,
+        },
+      ],
+    },
+    {
       name: ["build", "make"],
       description: "Build Electron and other things",
       icon: "🛠️",
