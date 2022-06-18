@@ -113,13 +113,39 @@ const completionSpec: Fig.Spec = {
     {
       name: "ci",
       description: "Show information about CI jobs",
-      icon: "⭕",
-      args: [
+      icon: "🏁",
+      subcommands: [
         {
           name: "status",
-          description: "Show the most recent CI job status for the current checkout",
-          isOptional: false,
-        },
+          icon: "https://a.slack-edge.com/production-standard-emoji-assets/13.0/apple-medium/1f52e@2x.png",
+          description: "Show information about CI job statuses",
+          options: [
+            {
+              name: ["-r", "--ref"], 
+              description: "The ref to check CI job status for"
+            },
+            {
+              name: ["-s", "--show-jobs"], 
+              description: "Whether to also list the jobs for each workflow"
+            }
+          ]
+        }, {
+          name: "rerun",
+          description: "Rerun CI workflows",
+          icon: "https://emoji.slack-edge.com/T394SAQKC/rerun/7d0b35ee3f62877c.png",
+          args: [
+            {
+              name: "workflow",
+              description: "The ID of the workflow to rerun"
+            }
+          ],
+          options: [
+            {
+              name: ["-f", "--from-failed"], 
+              description: "Rerun workflow from failed",
+            }
+          ]
+        }
       ],
     },
     {
