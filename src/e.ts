@@ -11,7 +11,7 @@ const buildTargets = [
 
 const completionSpec: Fig.Spec = {
   name: "e",
-  description: "Electron build tool",
+  description: "Completion spec for @electron/build-tools",
   subcommands: [
     {
       name: ["init", "new"],
