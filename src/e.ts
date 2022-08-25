@@ -347,7 +347,7 @@ const completionSpec: Fig.Spec = {
           args: {
             name: "runner",
             description: "The subset of spec suite to run",
-            suggestions: ["main", "remote", "native"],
+            suggestions: ["main", "native"],
           },
         },
       ],
